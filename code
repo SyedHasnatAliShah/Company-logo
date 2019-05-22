@@ -1,0 +1,37 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+import operator
+
+
+if __name__ == '__main__':
+    s = input()
+    lq=[]
+    for b in s:
+        lq.append(b)
+    lq.sort()
+    dic={}
+    for i in lq:
+        count=0
+        for x in lq:
+            if i==x:
+                count+=1
+        dic[i]=count
+    dicc2=sorted(dic.items(), key=lambda x: x[1],reverse=True)
+    #print(dicc2)
+    c1=0
+    ld=[]
+    for i in dicc2:
+        c1+=1
+        if c1<=3:
+            for x in i:
+                ld.append(x) 
+
+
+    print(ld[0],ld[1])
+    print(ld[2],ld[3])
+    print(ld[4],ld[5]) 
